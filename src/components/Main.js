@@ -6,6 +6,7 @@ const Main = ({ children }) => (
     <AppBar
       title="Random quote machine"
       showMenuIconButton={false}
+      zDepth={2}
     />
     {/* this will render the child routes */}
     {children}
