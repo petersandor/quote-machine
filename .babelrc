@@ -4,11 +4,15 @@
     "production": {
       "presets": ["react-optimize"],
       "plugins": [
-        "dev-expression"
+        "dev-expression",
+        "material-ui"
       ]
     },
     "development": {
-      "plugins": ["react-hot-loader/babel"]
+      "plugins": [
+        "react-hot-loader/babel",
+        "material-ui"
+      ]
     }
   }
 }
