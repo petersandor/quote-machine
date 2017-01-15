@@ -1,7 +1,25 @@
 import React from 'react';
+import querystring from 'querystring';
 // import wiki from 'wikijs';
 
 import QuoteCard from '../components/QuoteCard';
+
+const makeTweetLink = (hashtags, related, text) => {
+  const tweetUrl = 'https://twitter.com/intent/tweet';
+  const urlParams = {};
+
+  if (hashtags.length) {
+    urlParams.hashtags = hashtags.join(',');
+  }
+
+  if (related.length) {
+    urlParams.related = related.join(',');
+  }
+
+  urlParams.text = text;
+
+  return `${tweetUrl}?${querystring.stringify(urlParams)}`;
+};
 
 const containerStyles = {
   margin: 15
@@ -20,7 +38,19 @@ class QuotesPage extends React.Component {
   }
 
   onTweetClick = () => {
-    console.log('I wanna tweet this');
+    const hashtags = ['quotes'];
+    const related = ['freecodecamp'];
+    const maxTweetLength = 140;
+    const ourTweetLength = this.state.quoteText.length + (hashtags.length * 2) +
+      hashtags.join('').length;
+
+    if (ourTweetLength > maxTweetLength) {
+      window.alert('Quote too long, can\'t be tweeted!');
+    } else {
+      window.open(
+        makeTweetLink(hashtags, related, this.state.quoteText)
+      );
+    }
   };
 
   onGetNewQuote = () => {
