@@ -19,7 +19,7 @@ const QuoteCard = props => (
       {props.text}
     </CardText>
     <CardHeader
-      title={props.author}
+      title={`- ${props.author}`}
       style={headerStyles}
     />
     <CardActions>
