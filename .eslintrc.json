@@ -9,7 +9,7 @@
   "rules": {
     "arrow-parens": ["error", "as-needed"],
     "comma-dangle": "off",
-    "max-len": ["error", 79, {
+    "max-len": ["error", 80, {
       "ignorePattern": " // eslint-disable-line "
     }],
     "no-underscore-dangle": "off",
