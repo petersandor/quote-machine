@@ -1,36 +1,34 @@
 import React from 'react';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FormatQuote from 'material-ui/svg-icons/editor/format-quote';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const cardStyles = {
-  maxWidth: 900,
+  maxWidth: 600,
   margin: '0 auto'
 };
 
 const headerStyles = {
-  textAlign: 'right',
   margin: '0 auto'
 };
 
 const QuoteCard = props => (
   <Card style={cardStyles}>
+    <CardHeader
+      title={`Quote by ${props.author}`}
+      style={headerStyles}
+    />
     <CardText>
       <FormatQuote />
       {props.text}
     </CardText>
-    <CardHeader
-      title={`- ${props.author}`}
-      style={headerStyles}
-    />
     <CardActions>
-      <FlatButton
+      <RaisedButton
         primary
         label="Tweet"
         onTouchTap={props.onTweetClick}
       />
-      <FlatButton
-        secondary
+      <RaisedButton
         label="Show another"
         onTouchTap={props.onGetNewQuote}
       />
