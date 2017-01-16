@@ -69,7 +69,7 @@ class QuotesPage extends React.Component {
     //   });
 
     // The only working API I could find is about Chuck Norris of course
-    fetch('https://api.icndb.com/jokes/random')
+    fetch('https://api.icndb.com/jokes/random?escape=javascript')
       .then(response => response.json())
       .then(response => {
         if (response.type === 'success') {
