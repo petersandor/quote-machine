@@ -4,7 +4,8 @@ import FormatQuote from 'material-ui/svg-icons/editor/format-quote';
 import FlatButton from 'material-ui/FlatButton';
 
 const cardStyles = {
-  maxWidth: 900
+  maxWidth: 900,
+  margin: '0 auto'
 };
 
 const headerStyles = {
