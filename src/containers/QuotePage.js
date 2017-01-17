@@ -1,5 +1,6 @@
 import React from 'react';
 import querystring from 'querystring';
+import Snackbar from 'material-ui/Snackbar';
 
 import QuoteCard from '../components/QuoteCard';
 
@@ -22,6 +23,10 @@ const makeTweetLink = (hashtags, related, text) => {
 
 const containerStyles = {
   margin: 15
+};
+
+const authorNoticeStyles = {
+  textAlign: 'center'
 };
 
 class QuotesPage extends React.Component {
@@ -81,6 +86,9 @@ class QuotesPage extends React.Component {
           onTweetClick={this.onTweetClick}
           onGetNewQuote={this.onGetNewQuote}
         />
+        <p style={authorNoticeStyles}>
+          made with &lt;3 by <a href="https://github.com/petersandor">petersandor</a>
+        </p>
       </div>
     );
   }
