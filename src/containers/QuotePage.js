@@ -1,6 +1,5 @@
 import React from 'react';
 import querystring from 'querystring';
-// import wiki from 'wikijs';
 
 import QuoteCard from '../components/QuoteCard';
 
@@ -60,14 +59,6 @@ class QuotesPage extends React.Component {
   };
 
   getRandomQuote = () => {
-    // wiki({
-    //   apiUrl: 'https://en.wikiquote.org/w/api.php'
-    // }).page('Batman')
-    //   .then(console.log)
-    //   .catch(err => {
-    //     console.error('fetch failed', err);
-    //   });
-
     // The only working API I could find is about Chuck Norris of course
     fetch('https://api.icndb.com/jokes/random?escape=javascript')
       .then(response => response.json())
