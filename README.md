@@ -1,6 +1,8 @@
-# Random quote machine
+# [Random quote machine](https://petersandor.github.io/quote-machine/)
 
-> Random tweetable quotes from famous people. Free Code Camp exercise task. 
+Random tweetable quotes from famous people. Free Code Camp exercise task.
+> Note: currently only shows random Chuck Norris jokes.
+
 
 ## Start
 
