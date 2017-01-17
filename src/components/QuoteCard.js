@@ -9,6 +9,7 @@ const cardStyles = {
 };
 
 const headerStyles = {
+  padding: '16px 16px 0',
   margin: '0 auto'
 };
 
