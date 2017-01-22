@@ -14,12 +14,4 @@ describe('configureStore.dev', () => {
       () => ({ type: 'UNKNOWN' }))
     ).not.toThrow();
   });
-
-  it('can assign preloadedState', () => {
-    const preloadedState = {
-      counter: 1,
-    };
-    const store = configureStore(preloadedState);
-    expect(store.getState().counter).toBe(1);
-  });
 });
