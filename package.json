@@ -2,7 +2,7 @@
   "private": true,
   "name": "quote-machine",
   "version": "0.0.1",
-  "description": "My module",
+  "description": "Simple app that shows random tweetable quote - exercise task for Free Code Camp course",
   "main": "lib/index.js",
   "license": "MIT",
   "repository": "petersandor/quote-machine",
