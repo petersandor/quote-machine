@@ -12,6 +12,7 @@ module.exports = {
   entry: [
     'webpack-hot-middleware/client',
     'react-hot-loader/patch',
+    'whatwg-fetch',
     './src/index',
   ],
   output: {

@@ -9,7 +9,10 @@ const nested = require('postcss-nested');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
-  entry: './src/index',
+  entry: [
+    'whatwg-fetch',
+    './src/index'
+  ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle-[chunkhash].js',
