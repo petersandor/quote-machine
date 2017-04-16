@@ -4,7 +4,7 @@ import AppBar from 'material-ui/AppBar';
 const Main = ({ children }) => (
   <div>
     <AppBar
-      title="Random quote machine"
+      title="Quote machine"
       showMenuIconButton={false}
       zDepth={2}
     />
