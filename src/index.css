@@ -1,9 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
-
 body {
   background: #f1f1f1;
 }
 
 #root {
   font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (min-width: 600px) {
+  #root {
+    position: absolute;
+    left: calc(50% - 135px);
+    top: calc(50% - 255px);
+    width: 270px;
+    background: white;
+    height: 510px;
+    z-index: 1;
+  }
+
+  .phone {
+    position: absolute;
+    top: calc(50% - 300px);
+    left: calc(50% - 150px);
+    margin: 0 auto;
+    background-color: #111;
+    width: 300px;
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 100px 0px rgba(255, 255, 255, 0.2);
+  }
+
+  .phone__front--speaker {
+    display: inline-block;
+    position: relative;
+    left: calc(50% - 40px);
+    top: 15px;
+    border-radius: 5px;
+    background-color: #CCC;
+    width: 80px;
+    height: 10px;
+    box-shadow: inset 0px 0px 5px 2px rgba(100, 100, 100, 0.8);
+  }
+
+  .phone__front--display {
+    display: inline-block;
+    position: relative;
+    top: 30px;
+    left: calc(50% - 135px);
+    background-color: #292929;
+    width: 270px;
+    height: 510px;
+  }
 }
