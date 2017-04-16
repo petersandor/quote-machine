@@ -16,10 +16,6 @@ const headerStyles = {
   margin: '0 auto'
 };
 
-const actionStyles = {
-  textAlign: 'right'
-};
-
 const categoriesStyle = {
   marginTop: '20px'
 };
@@ -41,7 +37,7 @@ const QuoteCard = props => (
       <FormatQuote />{ props.isLoading ? 'Loading...' : props.text }
       <Categories categories={props.categories} />
     </CardText>
-    <CardActions style={actionStyles}>
+    <CardActions>
       <RaisedButton
         primary
         label="Tweet"
