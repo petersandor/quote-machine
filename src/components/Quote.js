@@ -32,27 +32,26 @@ const authorNoticeStyles = {
 class Quote extends React.Component {
   componentWillMount() {
     this.props.getNewQuote();
-
-    this.setState({
-      quoteAuthor: 'N/A',
-      quoteText: 'Loading...'
-    });
   }
 
   onTweetClick = () => {
     const hashtags = ['quotes'];
     const related = ['freecodecamp'];
+    const message = this.props.quote.data.joke;
     const maxTweetLength = 140;
-    const ourTweetLength = this.state.quoteText.length + (hashtags.length * 2) +
+    const ourTweetLength = message.length + (hashtags.length * 2) +
       hashtags.join('').length;
 
     if (ourTweetLength > maxTweetLength) {
       window.alert('Quote too long, can\'t be tweeted!');
-    } else {
-      window.open(
-        makeTweetLink(hashtags, related, this.state.quoteText)
-      );
+      return false;
     }
+
+    window.open(
+      makeTweetLink(hashtags, related, message)
+    );
+
+    return true;
   };
 
   render() {
@@ -63,7 +62,6 @@ class Quote extends React.Component {
       <div style={containerStyles}>
         <QuoteCard
           isLoading={isLoading}
-          author={this.state.quoteAuthor}
           text={joke}
           onTweetClick={this.onTweetClick}
           onGetNewQuote={this.props.getNewQuote}

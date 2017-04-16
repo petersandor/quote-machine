@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FormatQuote from 'material-ui/svg-icons/editor/format-quote';
 import RaisedButton from 'material-ui/RaisedButton';
-import RefreshIndicator from 'material-ui/RefreshIndicator';
+import LinearProgress from 'material-ui/LinearProgress';
 import Chip from 'material-ui/Chip';
 
 const cardStyles = {
@@ -20,13 +20,16 @@ const actionStyles = {
   textAlign: 'right'
 };
 
-const refreshStyles = {
-  cursor: 'pointer'
-};
-
 const categoriesStyle = {
   marginTop: '20px'
 };
+
+const Categories = categories => (
+ categories.length ?
+   <div style={categoriesStyle}>
+     { categories.map(category => <Chip>{category}</Chip>) }
+   </div> : null
+);
 
 const QuoteCard = props => (
   <Card style={cardStyles}>
@@ -35,15 +38,8 @@ const QuoteCard = props => (
       style={headerStyles}
     />
     <CardText>
-      <FormatQuote />{props.text}
-      {
-        props.categories.length ?
-          <div style={categoriesStyle}>
-            {
-              props.categories.map(category => <Chip>{category}</Chip>)
-            }
-          </div> : null
-      }
+      <FormatQuote />{ props.isLoading ? 'Loading...' : props.text }
+      <Categories categories={props.categories} />
     </CardText>
     <CardActions style={actionStyles}>
       <RaisedButton
@@ -51,16 +47,12 @@ const QuoteCard = props => (
         label="Tweet"
         onTouchTap={props.onTweetClick}
       />
-      <RefreshIndicator
-        size={36}
-        left={16}
-        top={8}
-        percentage={props.isLoading ? 0 : 100}
-        status={props.isLoading ? 'loading' : 'ready'}
-        style={refreshStyles}
+      <RaisedButton
+        label="Refresh"
         onTouchTap={props.onGetNewQuote}
       />
     </CardActions>
+    { props.isLoading ? <LinearProgress mode="indeterminate" /> : false }
   </Card>
 );
 
