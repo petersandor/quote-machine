@@ -7,11 +7,4 @@ describe('rootReducer', () => {
     const store = createStore(rootReducer);
     expect(store.getState().routing).toBe(routing(undefined, {}));
   });
-
-  it('handles action', () => {
-    const store = createStore(rootReducer);
-    const action = { type: 'INCREMENT' };
-    store.dispatch(action);
-    expect(store.getState().routing).toBe(routing(undefined, action));
-  });
 });
