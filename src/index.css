@@ -11,11 +11,13 @@ body {
   #root {
     position: absolute;
     left: calc(50% - 135px);
-    top: calc(50% - 255px);
+    top: calc(50% - 252px);
     width: 270px;
     background: white;
     height: 510px;
     z-index: 1;
+    overflow: hidden;
+    transform: translateZ(0);
   }
 
   .phone {
@@ -50,5 +52,16 @@ body {
     background-color: #292929;
     width: 270px;
     height: 510px;
+  }
+
+  .snackbar {
+    bottom: calc(50% - 258px) !important;
+    width: 270px;
+  }
+
+  .snackbar > div {
+    width: auto !important;
+    min-width: 270px !important;
+    box-sizing: border-box;
   }
 }

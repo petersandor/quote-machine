@@ -73,8 +73,9 @@ class Quote extends React.Component {
         </p>
         <Snackbar
           open={isError}
+          className="snackbar"
           action="Retry"
-          message="Something went wrong"
+          message="Refresh failed"
           onActionTouchTap={this.props.getNewQuote}
         />
       </div>
