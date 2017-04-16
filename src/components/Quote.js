@@ -56,7 +56,7 @@ class Quote extends React.Component {
   };
 
   render() {
-    const isLoading = this.props.quote.isLoading;
+    const { isLoading, isError } = this.props.quote;
     const { joke, categories } = this.props.quote.data;
 
     return (
@@ -70,8 +70,15 @@ class Quote extends React.Component {
           categories={categories}
         />
         <p style={authorNoticeStyles}>
-          made with &lt;3 by <a href="https://github.com/petersandor">petersandor</a>
+          made with &lt;3 by&nbsp;
+          <a href="https://github.com/petersandor">petersandor</a>
         </p>
+        <Snackbar
+          open={isError}
+          action="Retry"
+          message="Something went wrong"
+          onActionTouchTap={this.props.getNewQuote}
+        />
       </div>
     );
   }

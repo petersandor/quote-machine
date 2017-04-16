@@ -8,6 +8,7 @@ import {
 
 const preloadedState = {
   isLoading: false,
+  isError: false,
   data: {
     id: null,
     categories: [],
@@ -23,11 +24,12 @@ const quotes = createReducer(preloadedState, {
   [FETCH_QUOTE_ERROR]: (state, action) => ({
     ...state,
     isLoading: false,
-    error: action.error
+    isError: true
   }),
   [FETCH_QUOTE_SUCCESS]: (state, action) => ({
     ...state,
     isLoading: false,
+    isError: false,
     data: {
       ...action.response.value
     }
